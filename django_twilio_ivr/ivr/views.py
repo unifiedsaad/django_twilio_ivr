@@ -5,7 +5,7 @@ from django.http import HttpResponse
 def init_automated_call(request):
     """ initial end point called by twilio on making a phone call to your twilio number"""
     response = VoiceResponse()
-    voice_message = 'Hi its Saad Mirza Press one to hear a monkey, two to receive an SMS'
+    voice_message = 'Hi its Saad Mirza Press one to hear a Song, two to receive an SMS'
 
     with response.gather(action='/respond/', num_digits=1) as g:
         g.say(voice_message)
