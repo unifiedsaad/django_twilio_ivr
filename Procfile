@@ -1,1 +1,1 @@
-web: python3 django_twilio_ivr/manage.py runserver
+web: python3 django_twilio_ivr/manage.py runserver 127.0.0.1:$PORT
