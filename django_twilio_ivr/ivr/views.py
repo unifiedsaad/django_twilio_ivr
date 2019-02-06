@@ -5,7 +5,7 @@ from django.http import HttpResponse
 def init_automated_call(request):
     """ initial end point called by twilio on making a phone call to your twilio number"""
     response = VoiceResponse()
-    response.dial('5106812559')
+    response.dial()
 
     # HttResponse will return xml response object for twilio api to process
     return HttpResponse(str(response), content_type='application/xml')
