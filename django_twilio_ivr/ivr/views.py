@@ -5,15 +5,7 @@ from django.http import HttpResponse
 def init_automated_call(request):
     """ initial end point called by twilio on making a phone call to your twilio number"""
     response = VoiceResponse()
-    voice_message = 'Hi its Saad Mirza Press one to hear a Beautiful Song, two to receive an SMS'
-
-    with response.gather(action='/respond/', num_digits=1) as g:
-        g.say(voice_message)
-        g.pause(length=1)
-
-    # if user does not response with an option
-    # call your http://{domain}/gather end point again to repeat options
-    response.redirect('/gather/')
+    response.dial('+923216051723')
 
     # HttResponse will return xml response object for twilio api to process
     return HttpResponse(str(response), content_type='application/xml')
